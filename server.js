@@ -1,10 +1,14 @@
 'use strict';
 
+// dependencies
 var express = require('express');
 var mongo = require('mongodb').MongoClient;
 var routes = require('./app/routes/index.js');
 var url = process.env.MONGOLAB_URI
 var app = express();
+
+// settings
+app.set('port', (process.env.PORT || 5000));
 
 mongo.connect(url, function (err, db) {
 
@@ -19,7 +23,7 @@ mongo.connect(url, function (err, db) {
 
    routes(app, db);
 
-   app.listen(3000, function () {
-      console.log('Node.js listening on port 3000...');
+   app.listen(app.get('port'), function() {
+     console.log('Node app is running on port', app.get('port'));
    });
 });
