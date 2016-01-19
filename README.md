@@ -10,11 +10,13 @@ This is a small, full-stack JavaScript application that utilizes
 2. Install Dependencies: `npm install`.
 3. Start the Server: `node server.js`.
 
-**NOTES:** You must have **mongdb** server running for the application to
-connect to. If necessary, you can change the settings in `server.js` to reflect
-your set-up. Also note that, depending on how your system installed its
-binaries, you might have to change the command from `node server.js` to `nodejs
-server.js`.
+## Notes on MongoDB
+This application is powered by MongoDB. In order to use the application, you
+must have a mongod server running, and you must configure the application to use
+that server. Configuration options can be found in `server.js`. Note that, in
+order to deploy to Heroku, we are reading the URI of the mongd server from the
+environment. Either change this in your `server.js` file or export the
+appropriate environmental variable.
 
 ## Example Creation Usage
 `https://morning-woodland-5743.herokuapp.com/new/http://www.google.com`
