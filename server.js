@@ -3,9 +3,10 @@
 var express = require('express');
 var mongo = require('mongodb').MongoClient;
 var routes = require('./app/routes/index.js');
+var url = process.env.MONGOLAB_URI
 var app = express();
 
-mongo.connect('mongodb://localhost:27017/urlshortener', function (err, db) {
+mongo.connect(url, function (err, db) {
 
    if (err) {
       throw new Error('Database failed to connect!');
