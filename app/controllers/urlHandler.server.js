@@ -26,7 +26,12 @@ function urlHandler(db) {
         throw err;
       }
 
-      res.redirect(doc[0].original_url);
+      if (doc.length === 0) {
+        res.json({"error": "Unable to find original url."});
+      } else {
+        res.redirect(doc[0].original_url);
+      }
+
     });
   }
 }
