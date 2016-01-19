@@ -24,6 +24,10 @@ module.exports = function(app, db) {
       res.json({"error": "Cannot find matching URL"});
     }
   });
+
+  app.route("/").get(function(req, res) {
+    res.sendFile(process.cwd() + '/public/index.html');
+  });
 };
 
 function validUrl(req) {

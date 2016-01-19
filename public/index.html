@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-
 <html>
+  <head>
+    <title>FreeCodeCamp -  URL Shortener MicroService</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  </head>
 
-   <head>
-      <title>Clementine.js - The elegant and lightweight full-stack boilerplate.</title>
-      <link href="http://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css">
-      <link href="/public/css/main.css" rel="stylesheet" type="text/css">  
-   </head>
-
-   <body>
-      <div class="container">
-         <img src="/public/img/clementine_150.png" />
-         <br />
-         <p class="clementine-text">Clementine.js</p>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>API Basejump: <small>URL Shortener Microservice</small></h1>
       </div>
 
-      <div class="container">
-         <p>You have clicked the button <span id="click-nbr"></span> times.</p>   
-         <br />
-         <div class="btn-container">
-            <button type="submit" class="btn btn-add">CLICK ME!</button>
-            <button class="btn btn-delete">RESET</button>
-         </div>
-      </div>
+      <blockquote>
+        <p>This is a whoami microservice. The purpose of this microservice is to
+        be able to parse a url in the format of `http://www.google.com` or
+        `https://www.google.com` to the `/new` endpiont, assign that url to an
+        internal number, and redirect the user to that url when they visit
+        `https://morning-woodland-5743.herokuapp.com/int`.</p>
+      </blockquote>
 
-      <script type="text/javascript" src="/controllers/clickController.client.js"></script>   
-   </body>
-
+      <h2>Example Creation Usage</h2>
+      <code>https://morning-woodland-5743.herokuapp.com/new/http://www.google.com</code>
+      <br />
+      <h2>Example Creation Output</h2>
+      <code>{"original_url": "http://www.google.com","short_url": "https://morning-woodland-5743.herokuapp.com/1"}</code>
+      <br />
+      <h2>Example Usage</h2>
+      `https://morning-woodland-5743.herokuapp.com/1` will **redirect to**
+      `www.google.com`.
+    </div>
+  </body>
 </html>
